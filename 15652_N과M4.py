@@ -1,10 +1,10 @@
 N, M = map(int, input().split())
 start = int('1'*N)
-
+result = []
 def is_desc(list):
     tmp = 0
     for num in list:
-        if tmp > num:
+        if tmp > num or num > M:
             return False
         tmp = num
     return True
@@ -12,5 +12,5 @@ def is_desc(list):
 for i in range(start,start*M):
     l = list(map(int, list(str(i))))
     if is_desc(l):
-        print(*l)
-    
+        result.append(l)
+print(len(result))    
