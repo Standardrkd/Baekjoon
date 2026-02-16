@@ -1,0 +1,15 @@
+N = int(input())
+xs = []
+ys = []
+for i in range(N):
+    x,y = map(int, input().split())
+    xs.append(x)
+    ys.append(y)
+
+a = 0
+b = 0
+for i in range(N-1):
+    a += xs[i] * ys[i+1]
+    b += xs[i+1] * ys[i]
+
+print(abs(a-b)/2)
