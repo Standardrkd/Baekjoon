@@ -6,7 +6,10 @@ result = []
 index = K-1
 
 while Josephus:
-    result.append(Josephus.pop(index%len(Josephus)))
+    result.append(str(Josephus.pop(index%len(Josephus))))
     if Josephus:
         index = (index + K -1)%(len(Josephus)) # 원소가 하나씩 없어지니까 index더할 때 1도 빼줘야함.
-print(result)
+
+print("<", end='')
+print(", ".join(result),end='')
+print(">")
