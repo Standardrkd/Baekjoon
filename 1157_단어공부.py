@@ -2,10 +2,17 @@ S = input()
 d = dict()
 
 for i in S:
-    if not i in d or not i.swapcase() in d:
-        d[i] = 1
+    if i in d or i.swapcase() in d:
+        if 65 <= ord(i) <= 90:
+            d[i] += 1
+        else:
+            d[i.swapcase()] += 1
     else:
-        d[i] += 1
+        if 65 <= ord(i) <= 90:
+            d[i] = 1
+        else:
+            d[i.swapcase()] = 1
+
 
 most = ""
 cnt = 0
@@ -19,3 +26,7 @@ for k,v in d.items():
     elif v == cnt:
         p = False
 
+if p:
+    print(most)
+else:
+    print("?")
