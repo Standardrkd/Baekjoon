@@ -10,17 +10,28 @@ visited = [False] * (N+1)
 for i in range(N): # 그래프로 만들기
     for j in range(N):
         if grid[i][j] == 1:
-            graph[i].append(j)
+            graph[i+1].append(j+1)
 
 
-def bfs():
+def bfs(i):
     while q:
         x = q.popleft()
         for nx in graph[x]:
             if not visited[nx]:
-                result[x][nx] = 1
+                result[i-1][nx-1] = 1
                 q.append(nx)
                 visited[nx] = True
+
+for i in range(1,N+1):
+    visited = [False] * (N+1)
+    q.append(i)
+    bfs(i)
+    
+for row in result:
+    print(*row)
+
+
+
 
 
 
