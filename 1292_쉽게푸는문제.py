@@ -6,5 +6,5 @@ for i in range(500):
     for j in range(i+1):
         L.append(i+1)
 a,b = map(int, input().split())
-print(L)
+# print(L)
 print(sum(L[a-1:b]))
