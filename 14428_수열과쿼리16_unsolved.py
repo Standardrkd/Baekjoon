@@ -14,7 +14,7 @@ while 1:
 l = list(map(int, input().split()))
 
 leaf_start = 2**k
-min_segtree = [[1,1e9]] * size 
+min_segtree = [[1e9,1e9]] * size 
 
 for i in range(N):
     min_segtree[leaf_start+i] = [i+1,l[i]] # 인덱스와 값을 한 번에 저장하기 위해 이차원 리스트로 만들기
@@ -62,6 +62,7 @@ def segmin(s,e):
 
 
 # 5 4 3 3 3 이면 3을 출력해야하는데 5가 나옴;; index도 최소화하는 방법 고안
+# ㅇㅋ
 
 
 M = int(input())
