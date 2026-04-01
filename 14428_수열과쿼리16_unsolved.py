@@ -32,11 +32,15 @@ def update(index, value):
             if min_segtree[index][1] < min_segtree[index+1][1]:
                 min_segtree[index//2] = [min_segtree[index][0], min_segtree[index][1]]
                 index//=2
+            elif min_segtree[index][1] == min_segtree[index+1][1]: # 둘이 같은 경우
+                min_segtree[index//2] = [min(min_segtree[index][0], min_segtree[index+1][0]), min(min_segtree[index][1], min_segtree[index+1][1])]
 
         else: # 오른쪽 노드
             if min_segtree[index][1] < min_segtree[index-1][1]:
                 min_segtree[index//2] = [min_segtree[index-1][0],min_segtree[index-1][0]]
                 index//=2
+            elif min_segtree[index][1] == min_segtree[index-1][1]: # 둘이 같은 경우
+                min_segtree[index//2] = [min(min_segtree[index][0], min_segtree[index+1][0]), min(min_segtree[index][1], min_segtree[index+1][1])]
 
 
 def segmin(s,e):
