@@ -1,4 +1,4 @@
-# 이런 미친 문제. 시간초과 어떻게 하냐!!!!!!!
+# 이런 미친 문제. 시간초과 어떻게 하냐!!!!!!! --> 해결함 (2026/04/07)
 
 from collections import deque
 import sys
