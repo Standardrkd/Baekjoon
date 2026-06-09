@@ -2,7 +2,6 @@ from collections import deque
 q = deque()
 N, M = map(int, input().split())
 banner = [list(map(int, input().split())) for _ in range(N)]
-visited = [[False] * M] * N
 dxs = [-1,1,0,0,-1,1,-1,1]
 dys = [0,0,-1,1,1,-1,-1,1]
 
