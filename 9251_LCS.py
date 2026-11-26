@@ -1,0 +1,19 @@
+S1 = input()
+S2 = input()
+
+dp = [[0 for _ in range(len(S1)+1)] for _ in range(len(S2)+1)]
+
+for i in range(1, len(S2)+1):
+    for j in range(1, len(S1)+1):
+        if S2[i-1] == S1[j-1]:
+            dp[i][j] = min(i, j,dp[i-1][j-1]+1)
+        else:
+            dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+
+print(max(dp[-1]))
+# print(" ",*list(S1))
+# i = 0
+# for row in dp[1:]:
+#     print(S2[i], end=' ')
+#     print(*row[1:])
+#     i += 1
